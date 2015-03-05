@@ -46,17 +46,22 @@ class Dungen
   def carve_path(length, layer)
     row = (4..(layer.length - 4)).to_a.sample
     col = (4..(layer.first.length - 4)).to_a.sample
+    prow = row
+    pcol = col
     length.times do
-      carve_space(row,col,layer)
+      layer[row][col] = "C"
+      carve_space(prow,pcol,layer)
+      prow = row
+      pcol = col
       row, col = move_cursor(row,col,layer)
       puts "just carved a space from layer, now it's:"
       puts format(layer)
-      sleep(0.01)
+      sleep(0.03)
     end
   end
 
   def linear_move_cursor(index,dim_length)
-    if (3...dim_length).include?(index) # -- in the middle, can go anywhere
+    if (1...dim_length-1).include?(index) # -- in the middle, can go anywhere
       index + OFFSETS.sample
     elsif index < 1 #at the top or left, move toward center
       index + 1
@@ -66,7 +71,7 @@ class Dungen
   end
 
   def move_cursor(row,col,layer)
-    new_ones = [linear_move_cursor(row,layer.length - 5), linear_move_cursor(col,layer.first.length - 5)]
+    new_ones = [linear_move_cursor(row,layer.length), linear_move_cursor(col,layer.first.length)]
     #puts "moved from cursor position [#{row},#{col}] to [#{new_ones[0]},#{new_ones[1]}]"
     new_ones
   end

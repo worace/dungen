@@ -47,10 +47,10 @@ describe Dungen do
   it "carves spaces sequentially" do
     3.times do
       puts "\n\n"
-      layer = @dungen.layer(40, 20)
+      layer = @dungen.layer(60, 45)
       puts "layer width: #{layer.first.length}"
       puts "layer height: #{layer.length}"
-      @dungen.carve_path(600, layer)
+      @dungen.carve_path(800, layer)
       puts @dungen.format(layer)
     end
   end
