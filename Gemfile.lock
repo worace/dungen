@@ -1,0 +1,34 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    arrayfields (4.9.2)
+    chronic (0.10.2)
+    coderay (1.1.0)
+    fattr (2.2.2)
+    main (5.3.2)
+      arrayfields (>= 4.7.4)
+      chronic (>= 0.6.2)
+      fattr (>= 2.2.0)
+      map (>= 5.1.0)
+      pry (>= 0.9)
+    map (6.5.5)
+    method_source (0.8.2)
+    minitest (5.5.1)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    rb-fsevent (0.9.4)
+    ruby_gntp (0.3.4)
+    slop (3.6.0)
+    tdd (2.1.0)
+      main (~> 5.0)
+      rb-fsevent (~> 0.9)
+      ruby_gntp
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest
+  tdd
